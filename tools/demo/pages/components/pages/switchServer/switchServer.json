@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "切换服务器",
+  "usingComponents": {
+    "switchServer": "/components/components/switchServer/switchServer"
+  }
+}

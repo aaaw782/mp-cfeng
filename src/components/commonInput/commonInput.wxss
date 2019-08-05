@@ -1,0 +1,288 @@
+/*带时间选择器输入  */
+
+.common-item-label {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 20rpx;
+  background-color: white;
+  flex: 1;
+  border-bottom: solid 1rpx #d8d8d8;
+}
+
+.common-item-label-content {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  position: relative;
+}
+
+.common-item-label-key {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #929292;
+}
+
+.common-item-button-picker-view {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
+  /* width: 400rpx; */
+  height: 100%;
+  white-space: pre;
+  margin-right: 60rpx;
+}
+
+.common-item-button-picker {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  white-space: pre;
+}
+
+.common-item-button-img {
+  position: absolute;
+  right: 0;
+  width: 75rpx;
+  height: 50rpx;
+  align-content: center;
+}
+
+/*单选按钮  */
+
+.common-item-radio-button {
+  margin: 20rpx 10rpx;
+  background-color: #f2f2f2;
+  color: #464646;
+  font-size: small;
+}
+
+.common-item-radio-button-selected {
+  background-color: #5a8af6;
+  color: white;
+}
+
+/*<!--通用选项显示--> */
+
+.common-normal-item-label {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 10rpx 2rpx 0rpx;
+  background-color: white;
+}
+
+.common-normal-item-label-one-line {
+  display: flex;
+  flex-direction: column;
+  background-color: #d8d8d8;
+  height: 1rpx;
+  width: 100%;
+  margin: 20rpx 0rpx 0rpx 0rpx;
+}
+
+.common-normal-item-label-content {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  position: relative;
+}
+
+.common-normal-item-label-key {
+  align-items: center;
+  width: 360rpx;
+  padding: 0rpx 0rpx 0rpx 20rpx;
+  flex: 1;
+}
+
+.common-normal-item-label-value {
+  align-items: center;
+  padding: 0rpx 20rpx 0rpx 0rpx;
+}
+
+/* <!-- 通用item--> */
+
+.common-normal-item-header {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 20rpx;
+  align-items: center;
+  border-bottom: solid 1rpx #d8d8d8;
+}
+
+.common-normal-item-key {
+  width: 160rpx;
+  text-align: left;
+  color: #929292;
+}
+
+.common-normal-item-value {
+  /* margin: 0rpx 400rpx 0rpx 0rpx; */
+  color: #333;
+  flex: 1;
+}
+
+.common-normal-item-value1 {
+  margin: 0rpx 0rpx 0rpx 0rpx;
+  color: #333;
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+.common-normal-item-other {
+  /*padding: 10rpx; */
+  color: #009ad7;
+  /* flex: 1; */
+}
+
+
+/* <!-- 带有close按钮通用item--> */
+.common-close-item-other {
+  margin-right: 10rpx;
+}
+
+.common-close-item-close {
+  width: 24px;
+  height: 24px;
+  margin-top: 8px;
+}
+
+/* <!-- 通用电话item--> */
+
+.common-phone-item-other {
+  /* flex: 1; */
+  /* display: flex; */
+  margin-right: 10rpx;
+}
+
+.common-phone-item-phone {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+
+.common-item-label-input {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    /* padding: 0rpx 20rpx 0rpx 0rpx; */
+    color: #333333;
+}
+
+.common-item-label-input-small {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    width: 65%;
+    height: 100%;
+    /* padding: 0rpx 20rpx 0rpx 0rpx; */
+    color: #333333;
+}
+
+.common-item-picker-unit-view {
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    border: 1rpx;
+    border-color: #d8d8d8; 
+    border-style:solid;
+    position: relative;
+}
+
+.common-item-picker-unit-img {
+    display: flex;
+    flex-direction: row;
+    width: 55rpx;
+    height: 50rpx;
+    align-content: center;
+    position: absolute;
+    right: 0;
+    top: 10rpx;
+}
+
+.common-item-picker-unit-picker {
+    z-index: 1;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+
+.common-item-picker-unit {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90rpx;
+    padding: 10rpx;
+    align-items: center;
+    z-index: 1;
+    white-space: pre;
+}
+
+
+
+.box_item input {
+  color: black;
+}
+
+.small-btn {
+  background-color: #ff8c06;
+  color: white;
+  font-size: 14px;
+  width:280rpx;
+  padding: 6rpx 10rpx;
+}
+
+.normal-btn {
+  background-color: #ff8c06;
+}
+
+.disabled-btn {
+  background-color: #999999;
+}
+
+.common-item-picker-code-view {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    position: relative;
+}
+.text-padding-left{
+  padding-left:15rpx;
+}
+.color-1{
+  color: #999999;
+}
+
+.common-item-side-label {
+  border-bottom: none;
+  padding: 10rpx 20rpx;
+}
+
+.common-item-side-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: white;
+  position: relative;
+}
+
+.common-item-side-input {
+  margin-top: 4rpx;
+  border: 1rpx solid #e7e7e7;
+  padding: 6rpx 10rpx;
+  border-radius: 6rpx;
+  width: auto;
+}
+
+.common-item-side-picker {
+  flex-direction: row;
+  margin-right: 0rpx;
+}
+
+.common-item-side-img {
+  bottom: 10rpx;
+}

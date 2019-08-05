@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "表格",
+  "usingComponents": {
+    "eTable": "/components/components/eTable/eTable"
+  }
+}

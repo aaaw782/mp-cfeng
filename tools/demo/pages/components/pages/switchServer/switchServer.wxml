@@ -1,0 +1,5 @@
+
+
+<view class="page" style='background-color: #ffffff'>
+  <switchServer pagePath="../../../../components/pages"></switchServer>
+</view>

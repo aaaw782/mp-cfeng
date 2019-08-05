@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "自定义选择器",
+  "usingComponents": {
+    "cfPicker": "/components/components/cfPicker/cfPicker",
+    "commonInput": "/components/components/commonInput/commonInput"
+  }
+}

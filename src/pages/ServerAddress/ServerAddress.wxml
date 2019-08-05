@@ -1,0 +1,27 @@
+<import src="../../../libs/wux/toast/toast.wxml" />
+<template is="toast" data="{{ ...$wux.toast }}" />
+
+<view class="page">
+
+  <view class="box_center">
+    <view class="box_item">
+      <input class="input_serverUrl" placeholder="输入服务器地址" bindinput="input_server_url" value="{{input_server_url}}"/>
+      <button style="" class="button1" bindtap="doAdd">添加</button>
+    </view>
+  </view>
+
+  <view class="items white-background" style='maigin-left:100rpx;'>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="loadMore" bindscrolltoupper="refresh">
+      <view wx:for="{{serverAddress}}" wx:key="{{index}}" class="item">
+        <view bindtap="doSelectServerUrl" data-index="{{index}}">
+          <view class="item-one-view">
+            <view class="item--view">
+              <text style="font: bold;">{{item}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</view>

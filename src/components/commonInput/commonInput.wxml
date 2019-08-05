@@ -1,0 +1,230 @@
+<!--带时间选择器输入-->
+<block wx:if="{{templateName == 'itemTimeButton'}}">
+  <view class="common-item-label">
+    <view class="common-item-label-content">
+      <text class="common-item-label-key" >{{key}}</text>
+      <dateTimePicker class='common-item-button-picker-view'  bind:bindchange="bindChange">
+        <view class="common-item-button-picker-view">{{dateTime == '' ? '选择': dateTime}}</view>
+      </dateTimePicker>
+
+      <image class="common-item-button-img" src="/resources/img_exhibition_arrow.png" />
+
+    </view>
+  </view>
+</block>
+
+<!--带地址选择器输入-->
+<block wx:elif="{{templateName == 'itemAreaButton'}}">
+  <view class="common-item-label">
+    <view class="common-item-label-content">
+      <text class="common-item-label-key">{{key}}</text>
+      <areaPicker class='common-item-button-picker-view' id="{{areaId}}"  bind:bindchange="bindChange">
+        <view class="common-item-button-picker-view">{{area == '' ? placeholder: area}}</view>
+      </areaPicker>
+
+      <image class="common-item-button-img" src="/resources/img_exhibition_arrow.png" />
+
+    </view>
+  </view>
+</block>
+
+<!--带货物类型选择器输入-->
+<block wx:elif="{{templateName == 'itemGoodsTypeButton'}}">
+  <view class="common-item-label">
+    <view class="common-item-label-content">
+      <text class="common-item-label-key">{{key}}</text>
+      <goodsTypePicker class='common-item-button-picker-view' id="{{goodsTypeId}}"  bind:bindchange="{{bindChange}}">
+        <view class="common-item-button-picker-view">{{goodsType == '' ? placeholder: goodsType}}</view>
+      </goodsTypePicker>
+
+      <image class="common-item-button-img" src="/resources/img_exhibition_arrow.png" />
+
+    </view>
+  </view>
+</block>
+
+<!--带通用选择器输入-->
+<block wx:elif="{{templateName == 'itemNormalPicker'}}">
+  <view class="common-item-label" style='border-bottom:none;'>
+    <view class="common-item-label-content">
+      <text class="common-item-label-key">{{key}}</text>
+      <picker class="common-item-button-picker-view" bindchange="{{bindPickerChange}}" value="{{index}}" range="{{array}}">
+        <view>
+          <text class="common-item-button-picker-view" style='margin-right:26rpx;white-space:normal;'>{{array[index] == '' ? '选择' : array[index]}}     </text>
+        </view>
+      </picker>
+
+      <image class="common-item-button-img" src="/resources/img_exhibition_arrow.png" />
+
+    </view>
+  </view>
+</block>
+
+
+<!--单选按钮-->
+<block wx:elif="{{templateName == 'itemRadioButton'}}">
+  <view wx:for="{{radioList}}" wx:key="{{index}}">
+    <view bindtap="{{doSelectRadio}}" data-index="{{index}}">
+      <button wx:if="{{index == selectIndex}}" class="common-item-radio-button common-item-radio-button-selected">{{item}}</button>
+      <button wx:else class="common-item-radio-button">{{item}}</button>
+    </view>
+  </view>
+</block>
+
+<!--通用选项显示-->
+<block wx:elif="{{templateName == 'itemNormalLabel'}}">
+  <view class="common-normal-item-label">
+    <view class="common-normal-item-label-content">
+      <text class="common-normal-item-label-key">{{key}}</text>
+      <text class="common-normal-item-label-value">{{value}}</text>
+    </view>
+
+    <view class="common-normal-item-label-one-line" />
+  </view>
+</block>
+
+<!--带颜色通用选项显示-->
+<block wx:elif="{{templateName == 'itemNormalColorLabel'}}">
+  <view class="common-normal-item-label">
+    <view class="common-normal-item-label-content">
+      <text class="common-normal-item-label-key">{{key}}</text>
+      <text class="common-normal-item-label-value" style="color:{{color}}">{{value}}</text>
+    </view>
+
+    <view class="common-normal-item-label-one-line" />
+  </view>
+</block>
+
+<!-- 通用item-->
+<block wx:elif="{{templateName == 'commonNormalItem'}}">
+  <view class="common-normal-item-header">
+    <view class="common-normal-item-key">{{key}}</view>
+    <view wx:if="{{!isRed}}" class="common-normal-item-value1 {{valueColor==true?'color-1':''}}"  bindtap="{{bindTextTap}}">{{value}}</view>
+    <view wx:else style='color:red;' class="common-normal-item-value1">{{value}}</view>
+    <view class="common-normal-item-other" hidden="{{!isShowOther}}" bindtap="{{doButtonTap}}">{{other}}</view>
+  </view>
+</block>
+
+<!-- 带有close按钮通用item-->
+<block wx:elif="{{templateName == 'commonCloseItem'}}">
+  <view class="common-normal-item-header">
+    <view class="common-normal-item-key">{{key}}</view>
+    <view wx:if="{{!isRed}}" class="common-normal-item-value1">{{value}}</view>
+    <view wx:else style='color:red;' class="common-normal-item-value1">{{value}}</view>
+    <view class="common-normal-item-other" hidden="{{!isShowOther}}" bindtap="{{doButtonTap}}">{{other}}</view>
+    <view class="common-close-item-other" hidden="{{!isShowClose}}" bindtap="{{doCloseTap}}">
+      <image class="common-close-item-close" src="/resources/close.png" />
+    </view>
+  </view>
+</block>
+
+<!-- 通用电话item-->
+<block wx:elif="{{templateName == 'commonPhoneItem'}}">
+  <view class="common-normal-item-header">
+    <view class="common-normal-item-key">{{key}}</view>
+    <view class="common-normal-item-value">{{value}}</view>
+    <view class="common-phone-item-other" hidden="{{!isShowOther}}" bindtap="{{doButtonTap}}">
+      <image class="common-phone-item-phone" src="/resources/phone.svg" />
+    </view>
+  </view>
+</block>
+
+<!--带选择器单位输入-->
+<block wx:elif="{{templateName == 'itemLabelPickerUnit'}}">
+  <view class="common-item-label">
+    <view class="common-item-label-content">
+        <text class="common-item-label-key}}">{{key}}</text>
+        <input class="common-item-label-input" placeholder="{{placeholder}}" bindinput="{{bindinput}}" />
+
+        <view class="common-item-picker-unit-view">
+
+          <image class="common-item-picker-unit-img" src="/resources/img_exhibition_arrow.png" />
+
+          <picker class="common-item-picker-unit-picker" bindchange="{{bindPickerChange}}" value="{{index}}" range="{{array}}">
+            <view>
+              <text class="common-item-picker-unit">{{array[index]}}     </text>
+            </view>
+          </picker>
+
+          
+        </view>
+    </view>
+  </view>
+</block>
+
+<!--带选择按钮输入-->
+<block wx:elif="{{templateName == 'itemLabelInput'}}">
+  <view class="common-item-label">
+    <view class="common-item-label-content">
+        <text class="common-item-label-key" name="{{name}}">{{key}}</text>
+        <input type="{{type!=''?type:'text'}}" class=" {{isBtn?'common-item-label-input-small':'common-item-label-input'}}" value='{{value}}' maxlength="{{maxlength}}" placeholder="{{placeholder}} {{isMust==true?'(必填)':'(选填)'}}" bindinput="{{bindinput}}" disabled="{{!isInputDisabled}}"/>
+        <view>{{unit}}</view>
+        <view class="common-item-picker-code-view" wx:if="{{isBtn}}">
+          <button class="small-btn {{vilidRamdonCode?'normal-btn':'disabled-btn'}}" disabled="{{!vilidRamdonCode}}" bindtap="{{bindtap}}">{{ramdonCodeText}}</button>
+        </view>
+    </view>
+  </view>
+</block>
+
+
+<!--侧边栏输入-->
+<block wx:elif="{{templateName == 'itemSideLabelInput'}}">
+  <view class="common-item-label common-item-side-label">
+    <view class="common-item-side-content">
+        <text class="common-item-label-key" name="{{name}}">{{key}}</text>
+        <input type="{{type!=''?type:'text'}}" class="common-item-label-input common-item-side-input" value='{{value}}' maxlength="{{maxlength}}" placeholder="{{placeholder}}" bindinput="{{bindinput}}"/>
+    </view>
+  </view>
+</block>
+
+
+
+<!--侧边栏选择器-->
+<block wx:elif="{{templateName == 'itemSideLabelPicker'}}">
+  <view class="common-item-label common-item-side-label">
+    <view class="common-item-side-content">
+        <text class="common-item-label-key" name="{{name}}">{{key}}</text>
+        <view class='common-item-side-input'>
+          <picker mode="{{mode==null ? 'selector' : mode}}" class="common-item-button-picker-view common-item-side-picker" bindchange="{{bindPickerChange}}" value="{{index}}" range="{{array}}" range-key='{{arrayKey}}'>
+            <view>
+              <text class="common-item-button-picker-view" style='margin-right:26rpx;white-space:normal;'>{{selectValue == '' ? placeholder : selectValue}}     </text>
+              <image class="common-item-button-img common-item-side-img" src="/resources/img_exhibition_arrow.png" />
+            </view>
+          </picker>
+        </view>
+    </view>
+  </view>
+</block>
+
+
+<!--侧边栏CF选择器-->
+<block wx:elif="{{templateName == 'itemSideLabelCFPicker'}}">
+  <view class="common-item-label common-item-side-label">
+    <view class="common-item-side-content">
+        <text class="common-item-label-key" name="{{name}}">{{key}}</text>
+        <view class='common-item-side-input'>
+          <cfPicker bindsure="{{bindPickerChange}}" listData="{{array}}" keyWordsOfShow='{{arrayKey}}'>
+            <view class="common-item-button-picker-view common-item-side-picker">
+              <text class="common-item-button-picker-view" style='margin-right:26rpx;white-space:normal;'>{{selectValue == '' ? placeholder : selectValue}}     </text>
+              <image class="common-item-button-img common-item-side-img" src="/resources/img_exhibition_arrow.png" />
+            </view>
+          </cfPicker>
+        </view>
+    </view>
+  </view>
+</block>
+
+<!--侧边栏CF选择器-->
+<block wx:elif="{{templateName == 'itemSideLabelCFPickerOnlyInput'}}">
+  <view class="common-item-label common-item-side-label">
+    <view class="common-item-side-content">
+        <text class="common-item-label-key" name="{{name}}">{{key}}</text>
+        <view class='common-item-side-input'>
+          <view bindtap="doTap" class="common-item-button-picker-view common-item-side-picker">
+            <text class="common-item-button-picker-view" style='margin-right:26rpx;white-space:normal;'>{{selectValue == '' ? placeholder : selectValue}}     </text>
+            <image class="common-item-button-img common-item-side-img" src="/resources/img_exhibition_arrow.png" />
+          </view>
+        </view>
+    </view>
+  </view>
+</block>

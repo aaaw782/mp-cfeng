@@ -1,0 +1,98 @@
+/* picker/picker.wxss */
+
+.full-box{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: 9999;
+	opacity: 0;
+	background:rgba(0,0,0,.4);
+	transition:all .4s ease-in-out 0;
+	pointer-events:none;
+  
+}
+.full-box.cur{
+	opacity:1;
+	pointer-events:auto;
+}
+
+.picker-bg {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.picker{
+	position: absolute;
+	width: 100%;
+	height: 290px;
+	bottom: -290px;
+	left: 0;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	transition:all .4s ease-in-out 0;
+}
+
+.cur .picker{
+	bottom:0;
+}
+.cur .modal{
+	bottom:50%;
+}
+.picker-line{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.picker-header {
+	height: 20%;
+	box-sizing: border-box;
+	padding: 0 20rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #eeeeee;
+}
+.picker-header view {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.picker-header view text{
+	font-size: 36rpx;
+}
+
+.picker-header input{
+	text-align: center;
+}
+
+.picker-content {
+	flex-grow: 1;
+}
+.line1{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	/* lines:1; */
+}
+
+
+
+@keyframes slideUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
+.cur .animate-slide {
+  animation: slideUp ease .3s forwards;
+}

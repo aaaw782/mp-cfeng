@@ -1,0 +1,22 @@
+
+<view class="main-page" bindtouchend='touchend' bindtouchstart='touchstart'>
+  <!-- 侧滑栏 -->
+  <view class="page_tab" style='width:{{width}}rpx;{{isShowLeft?"left":"right"}}:-{{width}}rpx;{{translate}}'>
+    <slot name="slider"></slot>
+
+    <view wx:if="{{isShowDefaultBtn}}" class='slider-btn'>
+      <view class="slider-btn-search" bindtap='doSliderSearch'>查询</view>
+
+      <view class="slider-btn-reset" bindtap='doSliderReset'>重置</view>
+    </view>
+
+  </view>
+
+  <view class="bg" bindtap='hideview' style='display:{{display}}'></view>
+
+  <view class="home">
+    <slot name="main"></slot>
+  </view>
+</view>
+
+

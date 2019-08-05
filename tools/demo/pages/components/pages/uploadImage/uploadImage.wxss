@@ -1,0 +1,22 @@
+
+
+.scroll {
+  position: absolute;
+  top: 0px;
+  bottom: 0rpx;
+}
+
+.img {
+  display: flex;
+  flex-direction: row;
+  height: 170px;
+  background-color: white;
+}
+
+.img-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rpx auto;
+}

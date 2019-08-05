@@ -1,0 +1,39 @@
+<!--logs.wxml-->
+
+<import src="../../../../libs/wux/toast/toast.wxml" />
+
+<template is="toast" data="{{ ...$wux.toast }}" />
+
+<view class="page">
+
+  <image class='bg' src='../../../../image/bg-login.png'></image>
+
+  <view class='logo-view'>
+    <image class='logo' src='../../../../image/logo.png'></image>
+  </view>
+
+  <view class="view_left">
+    <view class='line-s'></view>
+    <text class="text_title">橙蜂经理</text>
+    <view class='line-s'></view>
+  </view>
+
+  <view class="box_center">
+
+    <view class="box_item">
+      <image class='box-image' src='../../../../image/lg-phone.svg'></image>
+      <text name="loginName">手  机 ：</text>
+      <input class='box-input' type="number" placeholder="请输入手机号码" bindinput="loginNameChange" value="{{loginName}}" />
+    </view>
+
+    <view class="box_item">
+      <image class='box-image' src='../../../../image/lg-pwd.svg'></image>
+      <text name="employeePwd">密  码 ：</text>
+      <input class='box-input' password type="text" type="text" placeholder="请输入密码" bindinput="PwdChange" />
+    </view>
+
+  </view>
+
+   <button class="button" loading="{{loading}}" bindtap="doLogin">登录</button> 
+
+</view>

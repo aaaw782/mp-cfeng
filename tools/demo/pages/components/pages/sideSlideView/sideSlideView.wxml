@@ -1,0 +1,28 @@
+
+
+<sideSlideView id='sideSlideView' isShowView='{{isShowSlideView}}' isShowDefaultBtn='{{true}}'
+      bind:doSliderSearch='doSliderSearch' bind:doSliderReset='doSliderReset'  bind:doCancel='doSliderCancel'>
+
+  <view slot="slider">
+
+    <view class='slider-condition'>
+      <commonInput templateName="itemSideLabelCFPickerOnlyInput" 
+            key="所属项目"
+            placeholder="选择项目"
+            selectValue="{{projectName}}"
+            bind:doTap="bindProjectTap" 
+            >
+      </commonInput>
+    
+    </view>    
+  </view>
+
+  <view class="page" slot="main">
+    <view class='main-search' bindtap='doMainSearch'>条件筛选</view>
+
+  </view>
+
+</sideSlideView>
+
+<cfPicker isShowPicker='{{isShowCFPickerProject}}' bindsure="bindProjectChange" listData="{{[projectList]}}" keyWordsOfShow='key'>
+</cfPicker>

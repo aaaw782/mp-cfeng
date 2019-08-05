@@ -1,0 +1,9 @@
+
+
+<view class="page" style='background-color: #f2f2f2'>
+
+  <scroll-view scroll-y="true" class='scroll'>
+    <cfTable content="{{recordList}}" propsLeft="floorNum" propsRight="unitHouseList" propsRow="houseNum" propsStatus="workbillStatus" propsStatusColor="{{['#8BC34A']}}" propsStatusNoContain="{{['0']}}" bind:tap="doSelectRecord"></cfTable>
+  </scroll-view>
+</view>
+

@@ -1,0 +1,11 @@
+<view class='img-item'  hidden="{{!isShow}}">
+  <image data-index="{{index}}" class="img-item-pic" bindtap="doImage"  src="{{imgUrl}}" binderror="doPhotoErr" mode="aspectFill" style="width:{{imageWidth}}px; height: {{imageHeight}}px;"/>
+
+  <image wx:if='{{isShowDelete}}' class="img-item-close" bindtap="doDeleteImage"  src="../../resources/close.png" mode="aspectFill" style="margin-left:{{imageWidth/2}}px;"/>
+
+  <view wx:if='{{isShowHint}}' class='hint-view' style="width:{{imageWidth}}px; height: {{imageHeight}}px;">
+    <text class='hint-text'>上传中...</text>
+  </view>
+</view>
+
+

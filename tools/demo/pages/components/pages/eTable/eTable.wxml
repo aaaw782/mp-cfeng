@@ -1,0 +1,9 @@
+
+
+<view class="page" style='background-color: #ffffff'>
+
+  <scroll-view scroll-y="true" class='scroll'>
+    <eTable config="{{config}}"></eTable>
+  </scroll-view>
+</view>
+

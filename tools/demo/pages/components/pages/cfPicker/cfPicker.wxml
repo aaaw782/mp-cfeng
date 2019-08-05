@@ -1,0 +1,12 @@
+
+<commonInput templateName="itemSideLabelCFPickerOnlyInput" 
+            key="所属项目"
+            placeholder="选择项目"
+            selectValue="{{projectName}}"
+            bind:doTap="bindProjectTap" 
+            >
+</commonInput>
+
+
+<cfPicker isShowPicker='{{isShowCFPickerProject}}' bindsure="bindProjectChange" listData="{{[projectList]}}" keyWordsOfShow='key'>
+</cfPicker>

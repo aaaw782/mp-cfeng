@@ -1,0 +1,35 @@
+
+<view bindtap="openPicker">
+  <slot></slot>
+</view>
+
+<!--picker/picker.wxml-->
+<view class="full-box {{isOpen?'cur':''}}">
+  <view bindtap="cancle" class="picker-bg"></view>
+	<view class="picker animate-slide">
+		<view class="picker-header" style="{{pickerHeaderStyle}}">
+			<view bindtap="cancle" >
+				<text style="{{cancelStyle}}">{{cancelText}}</text>
+			</view>
+			<input style="{{titleStyle}}" bindconfirm='keySearch' placeholder="请输入搜索关键字" value='{{inputValue}}'></input>
+			<view bindtap="sure">
+				<text  style="{{sureStyle}}">{{sureText}}</text>
+			</view>
+		</view>
+		<picker-view
+			value="{{value}}"
+			class="picker-content"
+			bindpickstart="_bindpickstart"
+			bindchange="_bindChange"
+			bindpickend="_bindpickend"
+			indicator-style="{{indicatorStyle}}"
+			mask-style="{{maskStyle}}"
+		>
+			<picker-view-column wx:for="{{columnsData}}" wx:key="{{index}}">
+				<view wx:for="{{item}}" wx:for-item="itemIn" class="picker-line" wx:key="{{index}}">
+					<text class="line1" style="{{chooseItemTextStyle}}">{{isUseKeywordOfShow?itemIn[keyWordsOfShow]:itemIn}}</text>
+				</view>
+			</picker-view-column>
+		</picker-view>
+	</view>
+</view>

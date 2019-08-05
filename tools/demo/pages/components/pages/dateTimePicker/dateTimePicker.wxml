@@ -1,0 +1,7 @@
+
+<commonInput templateName="itemTimeButton" 
+            key="提货时间"
+            dateTime="{{shipTimeStart}}"
+            bind:bindChange="shipTimeStart" 
+            >
+</commonInput>

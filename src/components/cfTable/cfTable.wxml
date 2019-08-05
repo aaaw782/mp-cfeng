@@ -1,0 +1,27 @@
+<!--compenents/cftable.wxml-->
+
+<wxs src="../../api/filter.wxs" module="filter" />
+
+
+<view class="cftable {{border?'cftable-border':''}}">
+  <view class='cftable-content-left'>
+    <view wx:for="{{oriData}}" wx:for-index="outIndex" wx:for-item="outItem" wx:key="{{outIndex}}" class="cftable-content-row {{stripe?(outIndex%2 === 0 ? 'cftable-content-row-bg1':'cftable-content-row-bg2'):''}}">
+      <view style="width:{{rowWidth}}px;height:{{rowHeight*(dataLength[outIndex].length > 0 ? dataLength[outIndex].length : 1)}}px;" class="cftable-content-column {{border?'cftable-content-column-border':''}} {{isSelected&&outItem['isSelected'] ? 'selected-color': ''}}" bindtap="onTapLeft"  data-index='{{outIndex}}'>
+        {{outItem[propsLeft]}}楼
+      </view>
+    </view>
+  </view>
+
+  <view class='cftable-content'>
+    <view wx:for="{{oriData}}" wx:for-index="outIndex" wx:for-item="outItem" wx:key="{{outIndex}}" class="cftable-content-row {{stripe?(outIndex%2 === 0 ? 'cftable-content-row-bg1':'cftable-content-row-bg2'):''}}">
+      <view wx:for="{{dataLength[outIndex]}}"  wx:for-index="innerIndex" wx:key="{{outIndex}}-{{index}}" class="cftable-content-column-one">
+        <view wx:for="{{propArray}}" wx:key="{{outIndex}}-{{innerIndex}}-{{index}}" style="width:{{rowWidth}}px;height:{{rowHeight}}px;background-color:{{filter.getAssignColor(outItem[propsRight][index+innerIndex*propArray.length][propsStatus], propsStatusColor, propsStatusContain, propsStatusNoContain)}}" class="cftable-content-column {{border?'cftable-content-column-border':''}}  {{isSelected&&outItem[propsRight][index+innerIndex*propArray.length]['isSelected'] ? 'selected-color': ''}}" bindtap="onTap"  data-item='{{outItem[propsRight][index+innerIndex*propArray.length]}}' data-outIndex="{{outIndex}}" data-innerIndex="{{index+innerIndex*propArray.length}}">
+          {{outItem[propsRight][index+innerIndex*propArray.length][propsRow]}}
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+</view>

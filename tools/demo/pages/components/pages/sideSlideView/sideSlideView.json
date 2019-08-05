@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "侧边栏页面",
+  "usingComponents": {
+    "sideSlideView": "/components/components/sideSlideView/sideSlideView",
+    "cfPicker": "/components/components/cfPicker/cfPicker",
+    "commonInput": "/components/components/commonInput/commonInput"
+  }
+}

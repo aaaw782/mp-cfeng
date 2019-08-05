@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "地址选择器",
+  "usingComponents": {
+    "commonInput": "/components/components/commonInput/commonInput"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "表格",
+  "usingComponents": {
+    "cfTable": "/components/components/cfTable/cfTable"
+  }
+}

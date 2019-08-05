@@ -1,0 +1,18 @@
+
+
+<view class="page" style='background-color: #f2f2f2'>
+
+  <scroll-view scroll-y="true" class='scroll'>
+
+    <view class='img'>
+      <view class='img-item'>
+        <uploadImage bind:uploadFileSuccess="uploadFileSuccess" bind:deleteImage="deleteImage">
+        </uploadImage>
+      </view>
+
+    </view>
+
+  </scroll-view>
+
+</view>
+

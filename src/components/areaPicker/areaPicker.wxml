@@ -1,0 +1,5 @@
+  <picker mode="multiSelector" value="{{selectedAreaArray}}" bindchange="changeArea" bindcolumnchange="changeAreaColumn" range="{{allAreaArray}}" range-key='NAME'>
+    <slot></slot>
+  </picker>
+
+

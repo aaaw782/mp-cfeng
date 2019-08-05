@@ -1,0 +1,61 @@
+
+// 金额显示
+var moneyFormat = function (money) {
+  // console.log(money);
+  if(money == NaN || money == null){
+    return 0.00;
+  }
+  return money.toFixed(2);
+}
+
+// 判断数组是否为空
+function arrayIsNull(list) {
+  if (list == null || list.length <= 0) {
+    return true;
+  }
+
+  return false;
+}
+
+// 获取指定的颜色
+function getAssignColor(value, colorArray, containArray, noContainArray) {
+  var defaultValue = "auto";
+  if (value == null || value == undefined) {
+    return defaultValue;
+  } else if (arrayIsNull(colorArray)) {
+    return defaultValue;
+  } else if (arrayIsNull(containArray) && arrayIsNull(noContainArray)) {
+    return defaultValue;
+  }
+
+  var list = containArray;
+  var isContain = true;
+  if (arrayIsNull(containArray)) {
+    list = noContainArray;
+    isContain = false;
+  }
+
+  for (var i = 0; i < list.length; i++) {
+    if (i >= colorArray.length) {
+      break;
+    }
+
+    var item = list[i];
+    var color = colorArray[i];
+    if (item.indexOf(value + '') == -1 && !isContain) {
+      return color;
+    } else if (item.indexOf(value + '') > -1 && isContain) {
+      return color;
+    }
+  }
+
+  return defaultValue;
+}
+
+/*
+ * 导出
+ */
+module.exports = {
+  moneyFormat: moneyFormat,
+  getAssignColor: getAssignColor,
+}

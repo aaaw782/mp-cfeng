@@ -1,0 +1,5 @@
+<!--compenents/switchServer.wxml-->
+
+<view wx:if="{{isShow}}" style="background-color: #ffffff;">
+  <input style="padding:25rpx" disabled="false" placeholder="点击切换服务器" value="{{serverUrl}}" bindtap="doSwitchServerAddress" />
+</view>

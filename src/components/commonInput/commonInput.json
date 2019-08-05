@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dateTimePicker": "../dateTimePicker/dateTimePicker",
+    "cfPicker": "../cfPicker/cfPicker",
+    "areaPicker": "../areaPicker/areaPicker"
+  }
+}

@@ -1,0 +1,9 @@
+<commonInput templateName="itemAreaButton" 
+            key="所在城市"
+            placeholder="选择所在城市"
+            area="{{address}}"
+            areaId="areaId"
+            bind:bindChange="bindAreachange" 
+            >
+</commonInput>
+
